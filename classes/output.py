@@ -44,23 +44,34 @@ class Output:
 			{
 				'name': 'tool',
 				'headers': {
-					1: {'title': 'SOFTWARE',        'color': 'blue', 'bold': True},
-					2: {'title': 'TOOL',            'color': 'blue', 'bold': True},
-					3: {'title': 'LINK',            'color': 'blue', 'bold': True}
+					1: {'title': 'TOOL',			'color': 'blue', 'bold': True},
+					2: {'title': 'SOFTWARE',		'color': 'blue', 'bold': True},
+					3: {'title': 'LINK',			'color': 'blue', 'bold': True}
 				},
 				'titles': [
 					{'category': 'tool',             'title': '%s'},
 				]
 			},
 			{
-				'name': 'interesting',
-				'headers':{
-					1: {'title': 'URL',      'color': 'blue', 'bold': True},
-					2: {'title': 'NOTE',     'color': 'blue', 'bold': True},
-					3: {'title': 'CATEGORY', 'color': 'blue', 'bold': True}
+				'name': 'subdomains',
+				'headers': {
+					1: {'title': 'DOMAIN',			'color': 'blue', 'bold': True},
+					2: {'title': 'TITLE',			'color': 'blue', 'bold': True},
+					3: {'title': 'IP',				'color': 'blue', 'bold': True}
 				},
 				'titles': [
-					{'category': 'interesting',          'title': 'Interesting URL'},
+					{'category': 'subdomains',		'title': '%s'},
+				]
+			},
+			{
+				'name': 'interesting',
+				'headers':{
+					1: {'title': 'URL',				'color': 'blue', 'bold': True},
+					2: {'title': 'NOTE',			'color': 'blue', 'bold': True},
+					3: {'title': 'CATEGORY',		'color': 'blue', 'bold': True}
+				},
+				'titles': [
+					{'category': 'interesting',		'title': 'Interesting URL'},
 				]
 			}
 		]
@@ -145,7 +156,13 @@ class OutputJSON(Output):
 						'link': version['col3'],
 						'vulnerability_count': version['col2']
 					})
-
+				elif section == 'tool':
+					site['data'].append({
+						'category': 'tools',
+						'name': software,
+						'version': version
+					})					
+				
 				else:
 					site['data'].append({
 						'category': category,

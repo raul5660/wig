@@ -127,8 +127,17 @@ class Results(object):
 
 
 	def add_tool(self, cms, tool_name, tool_link):
-		if 'tool' not in self.results: self.results['tool'] = {}
-		self.results['tool'][cms] = {'col2': tool_name, 'col3': tool_link}
+		if 'tool' not in self.results:
+			self.results['tool'] = {}
+		
+		self.results['tool'][tool_name] = {'col2': cms, 'col3': tool_link}
+
+
+	def add_subdomain(self, subdomain, title, ip):
+		if 'subdomains' not in self.results:
+			self.results['subdomains'] = {}		
+
+		self.results['subdomains'][subdomain] = {'col2': title, 'col3': ip}
 
 
 	def get_versions(self):

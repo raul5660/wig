@@ -4,6 +4,7 @@
     "aspnet": {"name": "ASP.NET"},
     "cakephp": {"name": "CakePHP"},
     "centos": {"name": "CentOS"},
+    "coldfusion": {"name": "ColdFusion"},
     "concrete5": {"name": "concrete5"},
     "debian": {"name": "Debian"},
     "demandware": {"name": "Demandware"},
@@ -60,7 +61,9 @@
     "sharepoint": {
         "name": "SharePoint",
         "tool": [
-            {"name": "sparty", "link": "https://github.com/alias1/sparty"}
+            {"name": "sparty", "link": "https://github.com/alias1/sparty"},
+            {"name": "spscan", "link": "https://github.com/toddsiegel/spscan"},
+            {"name": "Sharepoint URL Brute", "link": "http://www.bishopfox.com/download/414/"}
         ]
     },
     "sitecore": {"name": "Sitecore"},
@@ -82,5 +85,6 @@
     "zencart": {"name": "Zen Cart"},
     "zenphoto": {"name": "Zenphoto"},
     "modernizr": {"name": "Modernizr"},
-    "confixx": {"name": "Parallels Confixx"}
+    "confixx": {"name": "Parallels Confixx"},
+    "zope": {"name": "Zope"}
 }
