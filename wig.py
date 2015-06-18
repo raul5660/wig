@@ -1,17 +1,22 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
 
-import json, pprint, os, time, queue, sys
-import argparse
-from collections import defaultdict, Counter
+import time, sys, argparse
 from classes.cache import Cache
 from classes.results import Results
 from classes.fingerprints import Fingerprints
-from classes.discovery import *
 from classes.headers import ExtractHeaders
 from classes.matcher import Match
 from classes.printer import Printer
 from classes.output import OutputPrinter, OutputJSON
-from classes.request2 import Requester, UnknownHostName
+
+if sys.version_info.major == 3:
+    import queue
+    from classes.discovery import *
+    from classes.request2 import Requester, UnknownHostName
+elif sys.version_info.major == 2:
+    import Queue as queue
+    from classes2.discovery import *
+    from classes2.request2 import Requester, UnknownHostName
 
 
 
